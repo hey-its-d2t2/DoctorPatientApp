@@ -1,9 +1,6 @@
 package com.doctorapp.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,5 +24,9 @@ public class DoctorApointmentLocation {
 
     @Column(name = "contact_number", nullable = false)
     private String contact_number;
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private Doctor doctor;
 
 }
