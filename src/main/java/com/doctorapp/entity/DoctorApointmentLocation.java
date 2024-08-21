@@ -10,6 +10,7 @@ import lombok.Setter;
 @Table(name = "doctor_apointment_location")
 public class DoctorApointmentLocation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 
