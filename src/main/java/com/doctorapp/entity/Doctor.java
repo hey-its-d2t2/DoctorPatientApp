@@ -10,32 +10,29 @@ import lombok.Setter;
 @Table(name = "doctor")
 public class Doctor {
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 45)
-    private String name;
+    @Column(name = "profile", nullable = false)
+    private String profile;
 
-    @Column(name = "qualifiaction", nullable = false)
-    private String qualifiaction;
+    @ManyToOne
+    @JoinColumn(name = "specialization_id")
+    private Specialization specialization;
 
-    @Column(name = "about", length = 5000)
-    private String about;
+    @ManyToOne
+    @JoinColumn(name = "area_id")
+    private Area area;
+
+    @ManyToOne
+    @JoinColumn(name = "city_id")
+    private City city;
 
     @Column(name = "experience", nullable = false)
     private String experience;
 
-    @Column(name = "image_url")
-    private String image_url;
-
-    @Column(name = "email", nullable = false, unique = true)
-    private String email;
-
-    @Column(name = "password", nullable = false, unique = true, length = 1000)
-    private String password;
-
-    @Column(name = "mobile", length = 15)
-    private String mobile;
+    @Column(name = "name", nullable = false)
+    private String name;
 
 }
