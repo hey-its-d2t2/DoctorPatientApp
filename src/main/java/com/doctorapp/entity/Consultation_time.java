@@ -23,6 +23,8 @@ public class Consultation_time {
     @Column(name = "time", nullable = false)
     private LocalTime time;
 
+    @Column(name = "status", nullable = false)
+    private String status;
     @ManyToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctor;
